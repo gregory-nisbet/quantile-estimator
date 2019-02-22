@@ -10,7 +10,7 @@ all.stamp: ./quantile.ml ./quantile.mli ./test_quantile.ml
 	$(MAKE) -f quantile.mk all
 	touch all.stamp
 
-test.stamp: ./quantile.ml ./quantile.mli ./test_quantile.ml 
+test.stamp: all.stamp
 	$(RM) test.stamp
 	$(MAKE) -f test.mk test
 	touch test.stamp
@@ -19,3 +19,4 @@ clean:
 	$(MAKE) -f quantile.mk clean
 	$(MAKE) -f test.mk clean
 	$(RM) *.stamp
+	$(RM) oUnit-anon.cache
